@@ -37,16 +37,33 @@ public class ListaEncadeada {
         no.setProximo(null);
 
         if (tamanho == 0) { //Se isso, lista vazia
-            this.prim= no; //primeiro elemento aponta pra no
+            this.prim = no; //primeiro elemento aponta pra no
 
         } else{
-            this.prim.setProximo(no);
+            this.ultm.setProximo(no);
         }
 
         this.ultm = no; //ultimo aponta p no tbm 
         tamanho++;
     }
+ 
+//Método p/ Adicionar in meio d list
+    public static void addMeio(int element){
+        No no = new No(); 
+        no.setElement(element);
+        no.setProximo(null);
 
+        if (tamanho == 0) {
+            this.prim = no;
+        } else {
+            this.ultm = no;
+        }
+
+        
+
+    }
+
+//Método para printar o ressult (sout p/ lista)    
     public void show_mostrar(){
         No interator = prim;
         System.out.println("Lista");
