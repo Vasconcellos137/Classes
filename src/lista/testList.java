@@ -15,6 +15,8 @@ public class testList {
         list.add(4); //3
         list.add(5); //4
 
+        // list.show_mostrar();
+
 //Add no inicio        
         // list.addInicio(9);
 
@@ -27,17 +29,15 @@ public class testList {
 
         // list.addMeio(element, pos);
 
-        list.show_mostrar();
+        // list.show_mostrar();
 
 //Remover no inicio
         // list.removerInicio();
 
 //Remover no fim
-        list.removerFim();
+        // list.removerFim();
+        // list.show_mostrar();
 
-
-        
-        list.show_mostrar();
 
     }
 }

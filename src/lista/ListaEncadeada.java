@@ -30,22 +30,7 @@ public class ListaEncadeada {
         this.tamanho = tamanho;
     }
 
-    // Método p/ Adicionar in final list
-    public void add(int element) {
-        No no = new No();
-        no.setElement(element);
-        no.setProximo(null);
-
-        if (tamanho == 0) { // Se isso, lista vazia
-            this.prim = no; // primeiro elemento aponta pra no
-
-        } else {
-            this.ultm.setProximo(no);
-        }
-
-        this.ultm = no; // ultimo aponta p no tbm
-        tamanho++;
-    }
+//  MÉTODOS - OPERAÇÕES
 
     // Método p Adicionar in inicio list
     public void addInicio(int element) {
@@ -84,15 +69,21 @@ public class ListaEncadeada {
         tamanho++;
     }
 
-    // Método para printar o result (sout p/ lista)
-    public void show_mostrar() {
-        No interator = prim;
-        System.out.println("Lista");
+    // Método p/ Adicionar in final list
+    public void add(int element) {
+        No no = new No();
+        no.setElement(element);
+        no.setProximo(null);
 
-        for (int i = 1; i <= tamanho; i++) {
-            System.out.println(interator.getElement() + " ");
-            interator = interator.getProximo();
+        if (tamanho == 0) { // Se isso, lista vazia
+            this.prim = no; // primeiro elemento aponta pra no
+
+        } else {
+            this.ultm.setProximo(no);
         }
+
+        this.ultm = no; // ultimo aponta p no tbm
+        tamanho++;
     }
 
     // Método p remover in inicio list
@@ -130,21 +121,46 @@ public class ListaEncadeada {
         tamanho--;
     }
 
-    //Método p remover in meio d list
-    public void removeMeio(int pos){
-        No atual = prim;
+    //Método p remover in meio d list  -  IMCOMPLETA
+    // public void removeMeio(int pos){
+    //     No atual = prim;
 
-        if (pos == 0) {
-            removerInicio();         
-        } else if (pos == tamanho) {   
-            removerFim();
-        }
+    //     if (pos == 0) {
+    //         removerInicio();         
+    //     } else if (pos == tamanho) {   
+    //         removerFim();
+    //     }
 
-        for (int i = 0; i < pos-1; i++) {
+    //     for (int i = 0; i < pos-1; i++) {
 
-        }
+    //     }
     
+    // }
+
+    // Método para printar o result (sout p/ lista)
+    public void show_mostrar() {
+        No interator = prim;
+        System.out.println("Lista");
+
+        for (int i = 1; i <= tamanho; i++) {
+            System.out.println(interator.getElement() + " ");
+            interator = interator.getProximo();
+        }
     }
+
+    @Override
+    //Método p printar fila
+    public String toString(){
+        No no = prim;
+        String resp = "";
+
+        for (int i = 0; i < tamanho; i++) {
+            resp = resp + " " + no.getElement() + " ";
+            no = no.getProximo();
+        }
+        return resp;
+    }
+
 }
 
 
