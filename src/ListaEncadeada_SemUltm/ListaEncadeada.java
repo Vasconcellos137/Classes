@@ -7,17 +7,20 @@ public class ListaEncadeada {
     public No getPrim() {
         return prim;
     }
+
     public void setPrim(No prim) {
         this.prim = prim;
     }
+
     public int getTamanho() {
         return tamanho;
     }
+
     public void setTamanho(int tamanho) {
         this.tamanho = tamanho;
     }
 
-//  MÉTODOS - OPERAÇÕES
+    // MÉTODOS - OPERAÇÕES
 
     // Método para printar o result (sout p/ lista)
     public void show_mostrar() {
@@ -31,8 +34,8 @@ public class ListaEncadeada {
     }
 
     @Override
-    //Método p printar fila
-    public String toString(){
+    // Método p printar fila
+    public String toString() {
         No no = prim;
         String resp = "";
 
@@ -44,17 +47,32 @@ public class ListaEncadeada {
     }
 
     // Método p/ Adicionar in final list
-    public void addFinal(int element){
+    public void addFinal(int element) {
         No no = new No();
         no.setElement(element);
         no.setProximo(null);
 
-        if (tamanho == 0) { // Se isso, lista vazia
-            this.prim = no; // primeiro elemento aponta pra no
+        if (tamanho == 0) {
+            prim = no;
+            tamanho++;
 
+        } else if (tamanho == 1) {
+            prim.setProximo(no);
+            tamanho++;
+
+        } else {
+            No atual = prim;
+
+            for (int i = 0; i <= tamanho; i++) {
+                
+                if (atual.getProximo() == null) {
+                    atual.setProximo(no);
+                } else {
+
+                }
+            }
         }
         tamanho++;
     }
 
-    
 }
