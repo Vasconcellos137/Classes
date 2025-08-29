@@ -15,7 +15,7 @@ public class testList {
         list.add(4); //3
         list.add(5); //4
 
-        // list.show_mostrar();
+        list.show_mostrar();
 
 //Add no inicio        
         // list.addInicio(9);

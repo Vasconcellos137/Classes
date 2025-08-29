@@ -1,8 +1,18 @@
 package lista_duplaEncamin;
 
-public class ListaDuplamenEncamin {
+public class ListaDuplamenEncadeada {
     private No prim;
     private No ultm;
+    private No anterior;
+
+    public No getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(No anterior) {
+        this.anterior = anterior;
+    }
+
     private int tamanho = 0;
 
     public No getPrim() {
@@ -55,5 +65,35 @@ public class ListaDuplamenEncamin {
         return resp;
     }
 
-    
+    // Método p adicionar in inicio d list
+    public void addInicio(int element) {
+        No no = new No();
+        no.setElement(element);
+        no.setProximo(prim);
+
+        if (tamanho == 0) {
+            ultm = no;
+        }
+
+        anterior = null;
+        prim = no;
+
+        tamanho++;
+    }
+
+//łĸˀøþ
+
+    // Método p/ Adicionar in final list - ERRO
+    public void addFim(int element) {
+        No no = new No();
+        no.setElement(element);
+        no.setProximo(null);
+
+        if (ultm == null) {
+            anterior = no;
+        }
+
+        tamanho++;
+    }
+
 }
